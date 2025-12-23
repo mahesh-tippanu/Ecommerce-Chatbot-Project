@@ -145,6 +145,59 @@ Owned Endpoints (Internal/Ops)
 •	GET /internal/ingestion/status (last run info)
 •	POST /internal/vector/rebuild (force re-embed/upsert)
 •	GET /internal/vector/stats (index health)
+
+<!-- LLD_START -->
+
+## 4.7 Documentation Sync Agent (EPIC 2)
+
+> ⚠️ This section is auto-generated and maintained by the Documentation Sync Agent.
+> Manual edits inside this block may be overwritten.
+
+### Purpose
+The Documentation Sync Agent ensures that project documentation remains continuously aligned with the source code. It automatically detects documentation-relevant changes in the repository and regenerates the corresponding Low Level Design (LLD) content using an AI-driven workflow.
+
+### Workflow
+1. GitHub emits a webhook event on commit, pull request, or workflow completion.
+2. The backend webhook receiver validates the event and extracts commit metadata.
+3. Markdown files impacted by the commit are identified.
+4. Updated markdown content is fetched and normalized.
+5. The processed content is forwarded to a Flowise-based LLM agent.
+6. The LLM regenerates the updated LLD content.
+7. The generated LLD replaces this section in the master documentation file.
+8. The updated document is committed back to the repository.
+
+### Components
+
+#### Backend Components
+- **Webhook Receiver**: Listens for GitHub events and validates signatures.
+- **Markdown Change Detector**: Identifies modified documentation files.
+- **Raw Content Fetcher**: Retrieves markdown content from GitHub.
+- **Flowise Forwarder**: Sends structured inputs to the LLM agent.
+- **Diff Analyzer**: Determines documentation impact scope.
+- **Logging Layer**: Captures execution traces and errors.
+
+#### Flowise Agent Components
+- **Custom Function Node**: Parses GitHub payloads and prepares markdown context.
+- **LLM Node**: Generates updated Low Level Design content.
+- **Output Node**: Produces final markdown for document insertion.
+
+### Data Structures
+- **Webhook Payload**: GitHub event metadata (repository, branch, commit ID).
+- **Cleaned Markdown Object**: Normalized documentation content.
+- **LLM Output Schema**: Structured markdown representing updated LLD.
+
+### APIs & Integrations
+- **GitHub API**: Commit metadata, file diffs, raw file contents.
+- **Flowise Prediction API**: LLM-based documentation generation.
+- **GitHub Contents API**: Update and commit modified documentation files.
+
+### Sequence Flow
+GitHub → Webhook Receiver → Markdown Extractor → Flowise Agent → LLM → Documentation Update → GitHub Commit.
+
+### Change Impact Analysis
+Any change to markdown-based documentation files triggers regeneration of this LLD section. Non-documentation code changes are ignored unless explicitly configured, ensuring minimal and relevant updates.
+
+<!-- LLD_END -->
  
 5. API Level Mapping to Modules (Ownership Matrix)
 5.1 Public Page Routes
