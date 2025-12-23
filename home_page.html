@@ -1,297 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>E-Commerce Chatbot | Documentation Sync Agent</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- ===================== -->
+<!-- Documentation Sync Agent -->
+<!-- ===================== -->
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --primary: #2563eb;
-            --dark: #0f172a;
-            --light-bg: #f7f9fc;
-            --card-bg: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            margin: 0;
-            background-color: var(--light-bg);
-            color: #1f2937;
-            line-height: 1.6;
-        }
-
-        /* HEADER */
-        header {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: #fff;
-            padding: 20px 40px 30px;
-        }
-
-        .topbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 24px;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li a {
-            color: #e5e7eb;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #60a5fa;
-        }
-
-        /* HERO */
-        .hero {
-            margin-top: 25px;
-            max-width: 900px;
-        }
-
-        .hero h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 16px;
-            color: #cbd5f5;
-        }
-
-        /* EPIC-2 Banner */
-        .epic-banner {
-            margin-top: 20px;
-            background: #1e293b;
-            padding: 14px 16px;
-            border-radius: 8px;
-            text-align: center;
-            border-left: 5px solid var(--primary);
-        }
-
-        .epic-banner p {
-            margin: 0;
-            font-size: 14px;
-        }
-
-        section {
-            padding: 60px 40px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        /* ABOUT */
-        #about h2 {
-            color: var(--primary);
-        }
-
-        /* DOC SYNC */
-        .doc-sync-section {
-            background: var(--card-bg);
-            border-top: 4px solid var(--primary);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .feature-card {
-            background: #f8fafc;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #e5e7eb;
-        }
-
-        .feature-card i {
-            font-size: 22px;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .feature-card h4 {
-            margin: 10px 0 8px;
-        }
-
-        .doc-sync-note {
-            margin-top: 25px;
-            font-style: italic;
-            color: #555;
-        }
-
-        /* BUTTONS */
-        .actions {
-            margin-top: 30px;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 10px 18px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background: #1d4ed8;
-        }
-
-        .btn-outline {
-            border: 1px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        footer {
-            background: var(--dark);
-            color: #cbd5e1;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
-    </style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header>
-    <div class="topbar">
-        <h2>E-Commerce Platform</h2>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#doc-sync">Documentation Sync</a></li>
-                <li>
-                    <a href="https://github.com/Dhanush-Raj1/Ecommerce-Chatbot-Project" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="hero">
-        <h1>AI-Powered E-Commerce Chatbot</h1>
-        <p>
-            Intelligent customer interaction combined with automated,
-            event-driven documentation synchronization.
-        </p>
-    </div>
-
-    <div class="epic-banner">
-        <p>
-            📘 <strong>EPIC-2: Documentation Sync Agent</strong>  
-            Automatically triggered by GitHub commits & pull requests.
-        </p>
-    </div>
-</header>
-
-<!-- ABOUT -->
-<section id="about">
-    <div class="container">
-        <h2>About the Platform</h2>
-        <p>
-            This platform integrates an AI-powered E-Commerce Chatbot with an
-            automated Documentation Sync Agent. It ensures real-time user
-            assistance while maintaining up-to-date technical documentation
-            aligned with source code changes.
-        </p>
-    </div>
-</section>
-
-<!-- DOC SYNC -->
 <section id="doc-sync" class="doc-sync-section">
     <div class="container">
+
         <h2>Documentation Sync Agent (EPIC 2)</h2>
 
         <p>
-            The Documentation Sync Agent is an event-driven workflow built using
-            Flowise / Flogentic orchestration. It reacts to repository events and
-            generates accurate technical documentation using AI.
+            The Documentation Sync Agent is an event-driven automation built using
+            Flowise (Flogentic-style orchestration). It listens to GitHub repository
+            events, detects documentation-related changes, generates updated Low
+            Level Design (LLD) content using AI, and automatically synchronizes the
+            master project documentation.
         </p>
+
+        <h3>Purpose</h3>
+        <p>
+            The primary goal of this agent is to ensure that technical documentation
+            remains continuously aligned with the source repository. Manual updates
+            to Low Level Design documents are eliminated by automatically regenerating
+            and updating the LLD section whenever documentation changes occur.
+        </p>
+
+        <h3>Key Capabilities</h3>
 
         <div class="features">
+
             <div class="feature-card">
-                <i class="fas fa-bolt"></i>
-                <h4>Event Driven</h4>
-                <p>Automatically triggers on commits and pull-request workflows.</p>
+                <h4>GitHub Event Trigger</h4>
+                <p>
+                    Listens to GitHub webhook events such as commit pushes, pull
+                    requests, or workflow runs to initiate the documentation
+                    synchronization workflow.
+                </p>
             </div>
 
             <div class="feature-card">
-                <i class="fas fa-code"></i>
-                <h4>Change Detection</h4>
-                <p>Identifies impacted files, modules, and components.</p>
+                <h4>Markdown Change Detection</h4>
+                <p>
+                    Detects changes only in markdown-based documentation files and
+                    prepares normalized content for AI-driven analysis.
+                </p>
             </div>
 
             <div class="feature-card">
-                <i class="fas fa-brain"></i>
-                <h4>AI Documentation</h4>
-                <p>Generates LLD, summaries, and architecture explanations.</p>
+                <h4>AI-Driven LLD Generation</h4>
+                <p>
+                    Uses a Flowise-integrated Large Language Model (LLM) to generate
+                    updated Low Level Design content along with a clear summary of
+                    what changed and why.
+                </p>
             </div>
 
             <div class="feature-card">
-                <i class="fas fa-shield-alt"></i>
-                <h4>Access Controlled</h4>
-                <p>Documentation shared only with authorized work or school emails.</p>
+                <h4>Automated Documentation Update</h4>
+                <p>
+                    Automatically replaces the LLD section inside the master project
+                    documentation file while keeping all other sections unchanged.
+                </p>
             </div>
+
+            <div class="feature-card">
+                <h4>Version-Controlled Updates</h4>
+                <p>
+                    Commits the updated documentation back to the GitHub repository,
+                    ensuring traceability, auditability, and rollback support.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h4>Governed Publishing</h4>
+                <p>
+                    Documentation updates follow internal governance rules.
+                    Access-controlled publishing and notifications are planned as
+                    future enhancements.
+                </p>
+            </div>
+
         </div>
 
-        <p class="doc-sync-note">
-            Public documentation publishing is intentionally disabled to maintain
-            compliance and internal governance standards.
+        <h3>What Exactly Happens When a Change Is Pushed?</h3>
+        <ul>
+            <li>GitHub triggers a webhook event on commit or pull request.</li>
+            <li>The backend validates the event and extracts repository metadata.</li>
+            <li>Only markdown documentation files are identified for processing.</li>
+            <li>Updated markdown content is fetched, cleaned, and normalized.</li>
+            <li>The content is forwarded to an AI agent via Flowise.</li>
+            <li>The AI regenerates the updated Low Level Design (LLD).</li>
+            <li>The LLD section in the master documentation is automatically replaced.</li>
+            <li>The updated document is committed back to the repository.</li>
+        </ul>
+
+        <h3>System Components</h3>
+
+        <h4>Backend Components</h4>
+        <ul>
+            <li><strong>Webhook Receiver</strong> – Receives and validates GitHub events.</li>
+            <li><strong>Markdown Change Detector</strong> – Identifies modified documentation files.</li>
+            <li><strong>Raw Content Fetcher</strong> – Retrieves markdown content from GitHub.</li>
+            <li><strong>Flowise Forwarder</strong> – Sends structured inputs to the AI agent.</li>
+            <li><strong>Diff Analyzer</strong> – Determines documentation impact scope.</li>
+            <li><strong>Logging Layer</strong> – Captures execution flow and errors.</li>
+        </ul>
+
+        <h4>Flowise Agent Components</h4>
+        <ul>
+            <li><strong>Custom Function Node (Extractor)</strong> – Parses GitHub payloads and prepares markdown context.</li>
+            <li><strong>LLM Node</strong> – Generates updated LLD content and change summary.</li>
+            <li><strong>Custom Function Node (Updater)</strong> – Updates the master documentation and commits changes.</li>
+        </ul>
+
+        <h3>Change Impact Summary</h3>
+        <p>
+            Any change to markdown-based documentation files triggers regeneration
+            of the Low Level Design section. Non-documentation code changes do not
+            affect the documentation unless explicitly enabled in future
+            enhancements.
         </p>
 
-        <div class="actions">
-            <a href="#doc-sync" class="btn btn-primary">View Workflow</a>
-            <a href="https://github.com/Dhanush-Raj1/Ecommerce-Chatbot-Project" target="_blank" class="btn btn-outline">
-                View Source Code
-            </a>
-        </div>
+        <p class="doc-sync-note">
+            The Documentation Sync Agent updates only the LLD section marked for
+            automation. All other sections of the project documentation remain
+            unchanged to preserve stability and review traceability.
+        </p>
+
     </div>
 </section>
-
-<!-- FOOTER -->
-<footer>
-    <p>
-        © 2024 E-Commerce Chatbot Platform  
-        | Documentation Sync Agent (EPIC-2 Enabled)
-    </p>
-</footer>
-
-</body>
-</html>
